@@ -18,11 +18,11 @@ age=20<br/>
 Example top CmakeLists.txt <br/>
 
 ```
-cmake_minimum_required(VERSION 2.8.9)<br/>
-project(test_config_reader) <br/>
-add_subdirectory(thirdparty/Config_Reader_Cpp) <br/>
-add_executable(test_config src/main.cpp) <br/>
-target_link_libraries (test_config PUBLIC config_reader) <br/>
+cmake_minimum_required(VERSION 2.8.9)
+project(test_config_reader) 
+add_subdirectory(thirdparty/Config_Reader_Cpp) 
+add_executable(test_config src/main.cpp) 
+target_link_libraries (test_config PUBLIC config_reader)
 ```
 
 ## Usage
