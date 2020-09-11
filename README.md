@@ -25,6 +25,20 @@ add_executable(test_config src/main.cpp) <br/>
 target_link_libraries (test_config PUBLIC config_reader) <br/>
 ```
 
+## Usage
+
+```
+#include <config_reader.h>
+..
+..
+config_reader reader("path\\to\\config.txt");
+reader.read();
+
+std::string val_str = reader.get_value_str("age");
+int val_int = reader.get_value_int("age");
+float val_int = reader.get_value_float("age");
+```
+
 ## To do
 - [ ] Create the source code as a cmake library that can be used in other projects.<br/>
 - [x] Convert the value to integer/float if present.<br/>
