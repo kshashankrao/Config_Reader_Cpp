@@ -46,6 +46,12 @@ std::string config_reader::get_value(std::string key)
 	}
 }
 
+std::string config_reader::get_value_str(std::string key)
+{
+	return get_value(key);
+}
+
+
 int config_reader::get_value_int(std::string key)
 {
 	std::string key_str = get_value(key);
