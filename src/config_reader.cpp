@@ -80,10 +80,10 @@ float config_reader::get_value_float(std::string key)
 	}
 }
 
-int main()
-{
-	config_reader reader("D:\\DeepLearning\\Config_Reader_Cpp\\data\\test_config.txt");
-	reader.read();
-	float val = reader.get_value_float("age");
-	std::cout << val << std::endl;
-}
+//int main()
+//{
+//	config_reader reader("D:\\DeepLearning\\Config_Reader_Cpp\\data\\test_config.txt");
+//	reader.read();
+//	float val = reader.get_value_float("age");
+//	std::cout << val << std::endl;
+//}

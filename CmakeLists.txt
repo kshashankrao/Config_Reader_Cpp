@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 2.8.9)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-project(config_reader)
-file(GLOB SOURCES "src/*")
-add_executable(config_reader ${SOURCES})
-target_link_libraries (config_reader)
+
+project(Config_reader)
+
+file(GLOB_RECURSE config_reader_filenames src/*)
+add_library(config_reader STATIC ${config_reader_filenames})
+set_target_properties(config_reader PROPERTIES LINKER_LANGUAGE CXX)
+target_include_directories(config_reader PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
