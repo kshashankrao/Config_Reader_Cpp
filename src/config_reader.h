@@ -22,6 +22,14 @@ public:
 	   Returns: Corresponding value*/
 	std::string get_value(std::string key);
 
+	/* Input: Key
+	   Returns: Converts valid Corresponding value to int*/
+	int get_value_int(std::string key);
+
+	/* Input: Key
+	   Returns: Converts valid Corresponding value to float*/
+	float get_value_float(std::string key);
+
 	/* Return: Map with key and value */
 	std::map<std::string, std::string> get_data()
 	{

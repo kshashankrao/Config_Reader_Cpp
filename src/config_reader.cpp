@@ -45,9 +45,31 @@ std::string config_reader::get_value(std::string key)
 		std::cout << "[INFO] Error - Key not found: " << e.what() << std::endl;
 	}
 }
-int main()
+
+int config_reader::get_value_int(std::string key)
 {
-	config_reader reader("path\\to\\config.txt");
-	reader.read();
-	std::cout << reader.get_value("name");
+	std::string key_str = get_value(key);
+	try
+	{
+		return stoi(key_str);
+	}
+
+	catch (std::exception& e)
+	{
+		std::cout << "Error: Value not an Integer: " << e.what() << std::endl;
+	}
+}
+
+float config_reader::get_value_float(std::string key)
+{
+	std::string key_str = get_value(key);
+	try
+	{
+		return stof(key_str);
+	}
+
+	catch (std::exception& e)
+	{
+		std::cout << "Error: Value not a float: " << e.what() << std::endl;
+	}
 }
