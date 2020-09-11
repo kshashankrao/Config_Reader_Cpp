@@ -20,7 +20,7 @@ void config_reader::read()
 		
 		for (std::string line; getline(inputFile, line);)
 		{
-			line.erase(std::remove_if(line.begin(), line.end(), isspace), line.end());
+			line.erase(std::remove_if(line.begin(), line.end(), ::isspace), line.end());
 			std::string key = line.substr(0, line.find(delimiter));
 			std::string value = line.substr(line.find(delimiter)+1, line.size());
 			data.insert(std::pair<std::string, std::string>(key, value));
@@ -72,4 +72,12 @@ float config_reader::get_value_float(std::string key)
 	{
 		std::cout << "Error: Value not a float: " << e.what() << std::endl;
 	}
+}
+
+int main()
+{
+	config_reader reader("D:\\DeepLearning\\Config_Reader_Cpp\\data\\test_config.txt");
+	reader.read();
+	float val = reader.get_value_float("age");
+	std::cout << val << std::endl;
 }

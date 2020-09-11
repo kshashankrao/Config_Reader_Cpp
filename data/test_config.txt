@@ -1,2 +1,2 @@
 name=shashank
-age=24.5
+age =  24.5
